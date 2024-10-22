@@ -1,0 +1,27 @@
+<div class ="col-md-10 offset-md-1">
+<h2>Employee List</h2>
+<table class = "table table-striped">
+    <thead class = "text-center">
+        <tr>
+        <th >First Name</th>
+        <th >Last name</th>
+        <th >Email Id</th>
+        <th > Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of employees">
+            <td class = "text-center">{{employee.firstName}}</td>
+            <td class = "text-center">{{employee.lastName}}</td>
+            <td class = "text-center">{{employee.emailId}}</td>
+            <td> 
+                <button (click) = "updateEmployee(employee)" class = "btn btn-info">Update</button>
+                <button *ngIf="employee.id !== undefined" (click)="deleteEmployees(employee.id!)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+                <button (click)="employeeDetails(employee)" class="btn btn-info" style="margin-left: 10px">View</button>
+            </td>
+        </tr>
+    </tbody>
+
+
+</table>
+</div>
